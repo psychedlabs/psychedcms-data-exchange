@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    PsychedCms\DataExchange\:
+        resource: '../src/'
+        exclude:
+            - '../src/Metadata/ExportSchema.php'
+            - '../src/Metadata/FieldMapping.php'
+            - '../src/Metadata/ImportOrder.php'
+            - '../src/FieldHandler/'
+            - '../src/Worker/'
+            - '../src/ExchangeManifest.php'
+            - '../src/PsychedCmsDataExchangeBundle.php'

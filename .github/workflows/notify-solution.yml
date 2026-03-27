@@ -1,0 +1,16 @@
+name: Notify Solution Repo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.SOLUTION_REPO_PAT }}
+          repository: psychedcms/psychedcms-solution
+          event-type: subtree-sync
+          client-payload: '{"package": "psychedcms-data-exchange", "ref": "main"}'
