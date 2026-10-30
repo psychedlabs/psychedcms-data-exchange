@@ -11,6 +11,6 @@ jobs:
       - uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.SOLUTION_REPO_PAT }}
-          repository: psychedcms/psychedcms-solution
+          repository: psychedlabs/psychedcms-solution
           event-type: subtree-sync
           client-payload: '{"package": "psychedcms-data-exchange", "ref": "main"}'
